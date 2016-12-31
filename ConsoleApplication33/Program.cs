@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleApplication33
+class Program
 {
-	class Program
+	static void Main()
 	{
-		static void Main(string[] args)
+		try
 		{
+			Console.WriteLine("Before throw");
+			throw new DivideByZeroException();
 		}
+		catch (DivideByZeroException)
+		{
+			Console.WriteLine("Exception caught");
+		}
+		Console.WriteLine("After try/catch block");
 	}
 }
